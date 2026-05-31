@@ -1,8 +1,8 @@
 # Distributed Generation Billing Control
 
-## Overview
-
 ![Distributed Generation Billing Control](assets/header.png)
+
+## Overview
 
 This project documents the restructuring of a billing control process for a distributed generation solar portfolio composed of more than 40 projects and multiple large corporate clients.
 
