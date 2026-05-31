@@ -1,6 +1,6 @@
 # Generation Data Source of Truth
 
-
+![Header](assets/header.png)
 
 ## Overview
 
@@ -191,6 +191,8 @@ Main analyses included:
 
 Although the reports were mainly directed to the COO and had limited company-wide distribution, they played an important role in executive analysis and operational decision-making.
 
+![Dashboard](assets/dashboard.png)
+
 ---
 
 ## Modeling Note - Monthly Curves vs Simulation Summary Values
@@ -304,3 +306,5 @@ This project demonstrates my ability to:
 The data used in this repository is anonymized and simplified for portfolio purposes.
 
 The original project was developed in a business environment where generation data had direct relevance for executive reporting, asset performance analysis, and operational decision-making.
+
+---

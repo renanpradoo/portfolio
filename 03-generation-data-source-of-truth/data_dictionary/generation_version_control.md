@@ -102,8 +102,6 @@ Suggested accepted values:
 | `As-built`    | Simulation based on final built characteristics of the asset.    |
 | `Legacy`      | Older simulation or model version kept for historical reference. |
 | `Preliminary` | Initial estimate before final technical validation.              |
-| `Financial`   | Model assumption used for financial planning.                    |
-| `Operational` | Adjusted benchmark used for operational monitoring.              |
 
 ---
 
@@ -116,7 +114,6 @@ Suggested accepted values:
 | `EPC`                 | Simulation provided by the EPC contractor.                           |
 | `Engineering Team`    | Simulation produced or validated by the internal engineering team.   |
 | `Construction Team`   | Simulation or assumption provided by the internal construction team. |
-| `Business Analytics`  | Internally structured or adjusted analytical reference.              |
 | `External Consultant` | Simulation provided by an external technical partner.                |
 
 ---
