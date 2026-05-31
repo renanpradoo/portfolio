@@ -55,3 +55,15 @@ They are not polished product builds or academic exercises. They come from real 
 That is the kind of problem I enjoy solving.
 
 Turning messy business processes into reliable data structures, controls, and decision-support systems.
+
+
+Keywords: 
+    data-analytics
+    business-operations
+    sql
+    renewable-energy
+    solar-energy
+    billing
+    operational-analytics
+    data-modeling
+    tableau
