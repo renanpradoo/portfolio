@@ -22,12 +22,12 @@ The company needed a reliable way to compare actual solar generation against dif
 
 Before this project, the process depended on a complex spreadsheet that attempted to consolidate several different data sources:
 
-* Actual monthly generation from operating assets
-* PVSyst simulation outputs
-* Financial model generation assumptions
-* SolarGIS meteorological data
-* Project metadata and installed capacity information
-* Different simulation versions for the same asset
+- Actual monthly generation from operating assets
+- PVSyst simulation outputs
+- Financial model generation assumptions
+- SolarGIS meteorological data
+- Project metadata and installed capacity information
+- Different simulation versions for the same asset
 
 The main challenge was not only consolidating the data, but also defining which simulation should be used as the reliable benchmark for each project.
 
@@ -39,14 +39,14 @@ In many cases, the same asset had more than one PVSyst study, more than one fina
 
 The original process had several limitations:
 
-* No formal version control for simulations
-* Multiple PVSyst or financial model references for the same project
-* Low traceability of simulation assumptions
-* High risk of using outdated generation benchmarks
-* Poor scalability as the asset portfolio grew
-* Manual checks distributed across a poorly optimized spreadsheet
-* Limited visibility into the reliability of each simulation source
-* Difficulty comparing actual generation against trusted benchmarks
+- No formal version control for simulations
+- Multiple PVSyst or financial model references for the same project
+- Low traceability of simulation assumptions
+- High risk of using outdated generation benchmarks
+- Poor scalability as the asset portfolio grew
+- Manual checks distributed across a poorly optimized spreadsheet
+- Limited visibility into the reliability of each simulation source
+- Difficulty comparing actual generation against trusted benchmarks
 
 Because the spreadsheet was used as the final reference for generation values, any inconsistency could directly affect executive reporting, operational prioritization, and decision-making.
 
@@ -56,13 +56,13 @@ Because the spreadsheet was used as the final reference for generation values, a
 
 The objective was to transform a fragile spreadsheet-based process into a structured analytical data model capable of:
 
-* Consolidating monthly generation data
-* Controlling simulation versions by project
-* Identifying the most reliable generation benchmark available
-* Connecting actual generation to PVSyst, financial model, and SolarGIS assumptions
-* Supporting Tableau reports used by leadership
-* Improving data reliability, scalability, and traceability
-* Creating a single source of truth for generation analysis
+- Consolidating monthly generation data
+- Controlling simulation versions by project
+- Identifying the most reliable generation benchmark available
+- Connecting actual generation to PVSyst, financial model, and SolarGIS assumptions
+- Supporting Tableau reports used by leadership
+- Improving data reliability, scalability, and traceability
+- Creating a single source of truth for generation analysis
 
 ---
 
@@ -84,16 +84,16 @@ Together, these tables created a simple but scalable model for generation analys
 
 Fact table used to store monthly generation values across actual and simulated generation scenarios.
 
-**Granularity**: one row per project, reference month, generation type, and generation version when applicable.
+**Granularity:** one row per project, reference month, generation type, and generation version when applicable.
 
 This table was designed in a long-format structure, allowing actual generation and expected generation scenarios to be analyzed through the same analytical layer.
 
 The table may include monthly values for:
 
-* actual generation measured from operating assets;
-* PVSyst monthly generation curves;
-* SolarGIS-based expected generation;
-* internally modeled or adjusted generation scenarios.
+- actual generation measured from operating assets;
+- PVSyst monthly generation curves;
+- SolarGIS-based expected generation;
+- internally modeled or adjusted generation scenarios.
 
 For simulated or benchmark scenarios, each monthly record can reference `generation_version_control`, which identifies the simulation version, source assumptions, and benchmark status behind that monthly value.
 
@@ -109,60 +109,58 @@ This table does not store monthly generation curves. Instead, it stores metadata
 
 It was designed to answer questions such as:
 
-* Which simulation version should be used as the trusted benchmark for each project?
-* Was the benchmark produced by the EPC, internal engineering team, construction team, or another source?
-* Which meteorological database supported the simulation?
-* Which financial model version was the simulation connected to?
-* Is this version active, outdated, legacy, or replaced?
-* Should this version be used for executive reporting?
+- Which simulation version should be used as the trusted benchmark for each project?
+- Was the benchmark produced by the EPC, internal engineering team, construction team, or another source?
+- Which meteorological database supported the simulation?
+- Which financial model version was the simulation connected to?
+- Is this version active, outdated, legacy, or replaced?
+- Should this version be used for executive reporting?
 
 Main purpose:
 
-* Track PVSyst simulation versions
-* Track financial model generation assumptions
-* Store SolarGIS or other meteorological basis
-* Control P50, P90, and P95 values derived from simulation outputs
-* Identify the responsible source or team behind each benchmark
-* Improve traceability of benchmark selection
-* Support the selection of the most reliable expected-generation reference for each project
+- Track PVSyst simulation versions
+- Track financial model generation assumptions
+- Store SolarGIS or other meteorological basis
+- Control P50, P90, and P95 values derived from simulation outputs
+- Identify the responsible source or team behind each benchmark
+- Improve traceability of benchmark selection
+- Support the selection of the most reliable expected-generation reference for each project
 
 Example fields may include:
 
-* Project ID
-* Benchmark type: PVSyst, SolarGIS, Modeled
-* Model type: As-built, Legacy, EPC, Internal Engineering, etc.
-* Model version
-* Meteorological database
-* Datasource or reference file
-* P50 generation
-* P90 generation
-* P95 generation
-* Is active version
-* Is trusted benchmark
+- Project ID
+- Benchmark type: PVSyst, SolarGIS, Modeled
+- Model type: As-built, Legacy, EPC, Internal Engineering, etc.
+- Model version
+- Meteorological database
+- Datasource or reference file
+- P50 generation
+- P90 generation
+- P95 generation
+- Is active version
+- Is trusted benchmark
 
 ---
 
 ### `projects`
 
-Dimension table containing project-level attributes.
-
-This table provided the contextual information needed to analyze generation performance across different types of assets.
+Dimension table containing project-level attributes. This table provided the contextual information needed to analyze generation performance across different types of assets.
 
 Main purpose:
 
-* Store project metadata
-* Connect generation data to asset characteristics
-* Enable segmentation by project type, location, and installed capacity
-* Support executive reporting and operational analysis
+- Store project metadata
+- Connect generation data to asset characteristics
+- Enable segmentation by project type, location, and installed capacity
+- Support executive reporting and operational analysis
 
 Example fields may include:
 
-* Project ID
-* Project name
-* Installed capacity
-* Project type
-* Asset category
-* Commercial operation date
+- Project ID
+- Project name
+- Installed capacity
+- Project type
+- Asset category
+- Commercial operation date
 
 ---
 
@@ -180,14 +178,14 @@ The reports compared actual generation against the most reliable simulation benc
 
 Main analyses included:
 
-* Actual generation vs trusted simulation scenarios
-* Generation deviations by project
-* Portfolio-level generation performance
-* Identification of underperforming assets
-* Comparison between expected and realized generation
-* Operational prioritization for O&M actions
-* Visibility into potential distributor-related issues
-* Availability and performance remediation opportunities
+- Actual generation vs trusted simulation scenarios
+- Generation deviations by project
+- Portfolio-level generation performance
+- Identification of underperforming assets
+- Comparison between expected and realized generation
+- Operational prioritization for O&M actions
+- Visibility into potential distributor-related issues
+- Availability and performance remediation opportunities
 
 Although the reports were mainly directed to the COO and had limited company-wide distribution, they played an important role in executive analysis and operational decision-making.
 
@@ -195,7 +193,7 @@ Although the reports were mainly directed to the COO and had limited company-wid
 
 ---
 
-## Modeling Note - Monthly Curves vs Simulation Summary Values
+## Modeling Note: Monthly Curves vs Simulation Summary Values
 
 The model separates monthly generation curves from simulation-level summary values.
 
@@ -205,10 +203,10 @@ The `generation_version_control` table stores benchmark-level metadata and summa
 
 This separation was intentional:
 
-* monthly records are used for time-series analysis, Tableau reporting, and actual vs expected comparisons;
-* simulation summary values are used for benchmark governance, traceability, and confidence-level reference;
-* multiple monthly curves can be connected to controlled benchmark versions;
-* the company can compare realized monthly generation against the correct expected curve while still preserving the broader simulation assumptions behind that curve.
+- monthly records are used for time-series analysis, Tableau reporting, and actual vs expected comparisons;
+- simulation summary values are used for benchmark governance, traceability, and confidence-level reference;
+- multiple monthly curves can be connected to controlled benchmark versions;
+- the company can compare realized monthly generation against the correct expected curve while still preserving the broader simulation assumptions behind that curve.
 
 In practical terms, `compiled_generation` answers the operational question:
 
@@ -228,41 +226,41 @@ The main impact was not only the Tableau reporting layer, but the creation of a 
 
 Key results:
 
-* Replaced a fragile spreadsheet process with a structured data model
-* Created version control for generation simulations
-* Improved traceability of PVSyst, financial model, and SolarGIS assumptions
-* Reduced the risk of reporting outdated or incorrect generation benchmarks
-* Enabled consistent actual vs expected generation analysis
-* Supported executive decision-making for asset performance
-* Helped identify projects with potential O&M, availability, or distributor-related issues
-* Created a scalable structure for future portfolio growth
+- Replaced a fragile spreadsheet process with a structured data model
+- Created version control for generation simulations
+- Improved traceability of PVSyst, financial model, and SolarGIS assumptions
+- Reduced the risk of reporting outdated or incorrect generation benchmarks
+- Enabled consistent actual vs expected generation analysis
+- Supported executive decision-making for asset performance
+- Helped identify projects with potential O&M, availability, or distributor-related issues
+- Created a scalable structure for future portfolio growth
 
-![Key-results](assets/key_results.png)
+![Key results](assets/key_results.png)
 
 ---
 
 ## Tools & Technologies
 
-* SQL
-* Google Sheets
-* Tableau
-* PVSyst
-* SolarGIS
-* Financial model data
-* Relational data modeling
-* Business analytics
+- SQL
+- Google Sheets
+- Tableau
+- PVSyst
+- SolarGIS
+- Financial model data
+- Relational data modeling
+- Business analytics
 
 ---
 
 ## Project Outcomes
 
-| Area                 | Outcome                                                                   |
-| -------------------- | ------------------------------------------------------------------------- |
-| Data Reliability     | Created a structured source of truth for generation data                  |
-| Version Control      | Enabled tracking of multiple simulation versions by project               |
-| Executive Reporting  | Supported Tableau reports used by the COO                                 |
-| Operational Analysis | Helped identify underperforming assets and remediation priorities         |
-| Scalability          | Replaced a manual spreadsheet logic with a more scalable data model       |
+| Area | Outcome |
+|---|---|
+| Data Reliability | Created a structured source of truth for generation data |
+| Version Control | Enabled tracking of multiple simulation versions by project |
+| Executive Reporting | Supported Tableau reports used by the COO |
+| Operational Analysis | Helped identify underperforming assets and remediation priorities |
+| Scalability | Replaced a manual spreadsheet logic with a more scalable data model |
 | Business Positioning | Strengthened the connection between analytics, leadership, and operations |
 
 ---
@@ -271,14 +269,14 @@ Key results:
 
 This project demonstrates my ability to:
 
-* Translate an executive pain point into a structured data solution
-* Learn and apply SQL to solve a real business problem
-* Design analytical tables with clear business logic
-* Build a source of truth for high-value operational data
-* Connect technical implementation with decision-making needs
-* Create visibility for asset performance and generation reliability
-* Work across leadership, engineering, operations, and external data providers
-* Improve processes under pressure after a reporting failure
+- Translate an executive pain point into a structured data solution
+- Learn and apply SQL to solve a real business problem
+- Design analytical tables with clear business logic
+- Build a source of truth for high-value operational data
+- Connect technical implementation with decision-making needs
+- Create visibility for asset performance and generation reliability
+- Work across leadership, engineering, operations, and external data providers
+- Improve processes under pressure after a reporting failure
 
 ---
 
@@ -311,7 +309,13 @@ This project demonstrates my ability to:
 
 ## Reconstruction Note
 
-This project is a reconstructed version of a real professional project. The original files are confidential or no longer available, so the data model, SQL scripts and sample data were recreated for portfolio purposes using synthetic data. AI assistance was used to support the reconstruction of the SQL scripts and documentation, while the business context, modeling decisions and analytical logic reflect my own understanding of the original work.
+This project is a reconstructed version of a real professional project.
+
+The original files are confidential or no longer available, so the data model, SQL scripts, and sample data were recreated for portfolio purposes using synthetic data.
+
+AI assistance was used to support the reconstruction of the SQL scripts and documentation. The business context, modeling decisions, and analytical logic reflect my own understanding of the original work.
+
+The SQL scripts should be read as a portfolio reconstruction of the data model, not as a direct copy of the original production environment.
 
 ---
 
@@ -320,5 +324,3 @@ This project is a reconstructed version of a real professional project. The orig
 The data used in this repository is anonymized and simplified for portfolio purposes.
 
 The original project was developed in a business environment where generation data had direct relevance for executive reporting, asset performance analysis, and operational decision-making.
-
----
