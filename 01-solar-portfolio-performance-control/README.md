@@ -28,7 +28,7 @@ However, after the automation proved reliable, the consolidated data started bei
 
 ---
 
-## Problem
+## Challenges
 
 The main challenges were:
 
@@ -42,7 +42,7 @@ This limited the ability to monitor asset performance efficiently and created fr
 
 ---
 
-## Solution
+## Plan of Action
 
 I started studying Python and developed an automation workflow using:
 
@@ -68,20 +68,6 @@ The automation collected generation data from different platforms, standardized 
 
 ---
 
-## Platforms Integrated
-
-The automation covered approximately 5 to 6 monitoring platforms, including:
-
-* iSolarCloud
-* SolisCloud
-* SolarView
-* Huawei
-* Other inverter and monitoring systems
-
-In total, the consolidated base covered around **50 solar assets**.
-
----
-
 ## Key Results
 
 The project delivered value beyond its initial scope.
@@ -95,9 +81,25 @@ The original objective was to centralize data for daily performance tracking. Ov
 * Feeding operational views used by the Integrated Operations Center;
 * Supporting performance tests used in contractual milestones with EPC providers (+12 contracts).
 
+![Key Results](assets/key_results.png)
+
 ---
 
-## Key Skills
+### Platforms Integrated
+
+The automation covered approximately 5 to 6 monitoring platforms, including:
+
+* iSolarCloud
+* SolisCloud
+* SolarView
+* Huawei
+* Other inverter and monitoring systems
+
+In total, the consolidated base covered around **50 solar assets**.
+
+---
+
+### Key Skills
 
 * Process automation
 * Data collection from multiple sources
@@ -109,7 +111,7 @@ The original objective was to centralize data for daily performance tracking. Ov
 
 ---
 
-## Technical Notes
+## Disclaimer
 
 This was not designed as a complex software engineering project. The goal was to solve a concrete operational problem with a simple, useful, and maintainable automation.
 
