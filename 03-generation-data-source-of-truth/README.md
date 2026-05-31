@@ -2,6 +2,8 @@
 
 ## Overview
 
+![Header](assets/header.png)
+
 This project was developed after I was promoted to work more closely with the company’s C-Level, especially the COO. At that point, generation data had become one of the most important operational and strategic datasets in the company, but it was still being managed through a highly manual Google Sheets file.
 
 The original spreadsheet combined monthly generation data from solar assets, simulation outputs from PVSyst and the financial model, and meteorological assumptions from SolarGIS. Although this file was treated as the final reference for generation values, it had several structural issues: poor optimization, limited scalability, weak version control, and no reliable way to identify which simulation should be considered the most recent or trustworthy for each asset.
@@ -9,6 +11,8 @@ The original spreadsheet combined monthly generation data from solar assets, sim
 After an incorrect data point was reported to the COO, the need for a more robust structure became clear. This project was my first deep exposure to SQL and relational data modeling. I studied SQL intensively, redesigned the logic behind the spreadsheet, and created a structured data model to improve reliability, traceability, and analytical visibility.
 
 The final output was a set of three core tables that became the company’s source of truth for generation data and were later used to feed Tableau reports for executive and operational analysis.
+
+![Overview](assets/summary.png)
 
 ---
 
@@ -194,6 +198,8 @@ Key results:
 * Supported executive decision-making for asset performance
 * Helped identify projects with potential O&M, availability, or distributor-related issues
 * Created a scalable structure for future portfolio growth
+
+![Key-results](assets/key_results.png)
 
 ---
 
