@@ -8,13 +8,13 @@ This project documents the restructuring of a billing control process for a dist
 
 The original process was highly fragmented: each project was billed through an individual spreadsheet, contract rules varied across the portfolio, and the billing team depended on manual checks across several files to validate consumption, energy compensation, tariffs, credits, and contractual adjustments.
 
-The challenge was not simply to improve a spreadsheet. It was to bring structure to a billing operation that had become operationally fragile, commercially sensitive, and difficult to scale.
+The challenge was to bring structure to a billing operation that had become operationally fragile, commercially sensitive, and difficult to scale.
 
 ![stakeholders](assets/stakeholders.png)
 
 ## Business Context
 
-At the end of 2022, the team coordinator left the company, and I was appointed by the COO to temporarily lead a lean billing and asset management team of around 5 to 6 people while the company searched for a new manager.
+At the end of 2022, the team coordinator left the company, and I was appointed by the COO to temporarily lead a lean billing and asset management team of 6 people while the company searched for a new manager.
 
 Until that point, my responsibilities were mostly related to asset performance. In a short period of time, my scope shifted significantly toward billing operations, account management, contract interpretation, and client-facing problem solving.
 
@@ -62,8 +62,6 @@ Because the team was not technically oriented toward Python or SQL, the solution
 ## Solution Architecture
 
 The solution was designed as a three-layer control architecture.
-
-![Solution Architecture](assets/control_architecture.png)
 
 ### 1. Client Contract Billing Control
 
@@ -120,43 +118,23 @@ This layer was intended to support:
 
 Although this layer was not finalized, it reflected the broader direction of the project: turning a reactive billing process into a more analytical and preventive control system.
 
+![Solution Architecture](assets/control_architecture.png)
+
 ## Key Results
 
 The implemented controls delivered measurable improvements to the billing operation:
 
 * Reduced monthly billing processing time by approximately 75%.
 * Consolidated more than 40 project-level billing controls into a structured operating model.
-* Supported multiple contract structures within a single framework.
+* Supported multiple contract structures (over 4 types) within a single framework.
 * Improved the validation of utility billing data before client-facing calculations.
 * Improved the quality and consistency of client reports.
 * Created a more reliable basis for billing review and internal decision-making.
 * Enabled expected billing calculations based on contractual and operational assumptions.
-* Helped avoid an estimated R$ 60k per month in costs related to an external credit-control platform.
+* Helped avoid an estimated R$ 60k per year in costs related to an external credit-control platform.
 * Improved the team’s ability to detect inconsistencies before they became client-facing issues.
 
 ![Key Results](assets/key_results.png)
-
-## Strategic Relevance
-
-The main value of this project was not the use of spreadsheets. The value came from translating a fragmented and ambiguous billing process into a structured operating model.
-
-The project required understanding the commercial logic of distributed generation contracts, the operational behavior of solar assets, the limitations of utility-company data, and the practical constraints of a lean billing team.
-
-By separating the process into contract billing, utility validation, and forecasting layers, the team gained a clearer view of the portfolio, reduced manual exposure, and improved its ability to respond to client questions with consistency and confidence.
-
-## Role
-
-My role included:
-
-* Temporarily leading a billing and asset management team of 5 to 6 people.
-* Mapping the existing billing process and its operational weaknesses.
-* Learning and applying different contract models in a short period of time.
-* Designing the billing control architecture.
-* Translating contract rules into operational calculation logic.
-* Creating validation flags for utility billing inconsistencies.
-* Supporting client-facing discussions during a sensitive negotiation period.
-* Improving internal visibility over billing, compensation, credits, and expected revenue.
-* Building a practical solution that the team could maintain without advanced technical skills.
 
 ## Key-Skills
 
@@ -170,7 +148,7 @@ My role included:
 * Client-facing problem solving
 * Google Sheets modeling
 * Process standardization
-* Leadership under ambiguity
+* Leadership
 * Risk mapping and forecasting design
 
 ## Disclaimer

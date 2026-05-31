@@ -8,9 +8,11 @@ This project automated the collection, consolidation, and analysis of solar gene
 
 The original process was manual, fragmented, and dependent on several external systems that did not communicate with each other. Each inverter manufacturer or monitoring provider had its own platform, interface, and data structure, making daily performance tracking operationally inefficient and difficult to scale.
 
-The solution was developed in Python and centralized generation data from approximately **50 solar assets** across **5 to 6 monitoring platforms**, including iSolarCloud, SolisCloud, SolarView, Huawei, and others.
+The solution was developed in Python and centralized generation data from approximately **50 solar assets** across **6 monitoring platforms**, including iSolarCloud, SolisCloud, SolarView, Huawei, and others.
 
 What began as a simple operational automation later became a relevant data source for internal reports, the Integrated Operations Center, and contractual performance tests with EPC providers.
+
+![Automation Flow](assets/automation_flow.png)
 
 ---
 
@@ -80,7 +82,7 @@ In total, the consolidated base covered around **50 solar assets**.
 
 ---
 
-## Impact
+## Key Results
 
 The project delivered value beyond its initial scope.
 
@@ -88,14 +90,10 @@ The original objective was to centralize data for daily performance tracking. Ov
 
 * Reducing manual data collection;
 * Improving consistency in generation data;
-* Supporting daily asset performance monitoring;
+* Supporting daily asset performance monitoring (+50 assets);
 * Creating inputs for internal reports;
 * Feeding operational views used by the Integrated Operations Center;
-* Supporting performance tests used in contractual milestones with EPC providers.
-
-One of the most relevant outcomes was that the automated data was later used in performance tests executed at the end of EPC contracts, supporting the validation of one of the contractual milestones.
-
-![Automation Flow](assets/automation_flow.png)
+* Supporting performance tests used in contractual milestones with EPC providers (+12 contracts).
 
 ---
 
@@ -104,7 +102,7 @@ One of the most relevant outcomes was that the automated data was later used in 
 * Process automation
 * Data collection from multiple sources
 * Data cleaning and standardization
-* Python for business operations
+* Python for business operations (Pandas, Selenium, GSpread)
 * Operational analytics
 * Solar asset performance monitoring
 * Practical use of data in contractual and operational workflows
