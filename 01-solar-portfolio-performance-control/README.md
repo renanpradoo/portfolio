@@ -95,7 +95,7 @@ The original objective was to centralize data for daily performance tracking. Ov
 
 One of the most relevant outcomes was that the automated data was later used in performance tests executed at the end of EPC contracts, supporting the validation of one of the contractual milestones.
 
-![Automation Flow](assets/automation-flow.png)
+![Automation Flow](assets/automation_flow.png)
 
 ---
 
