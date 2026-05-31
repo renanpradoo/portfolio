@@ -2,7 +2,9 @@
 
 ## Description
 
-`compiled_generation` is the fact table used to store monthly generation records for each project.
+`compiled_generation` is the fact table used to store monthly generation records for each project. 
+
+The table follows a long-format analytical design, where actual and benchmark scenarios are stored as generation records distinguished by generation_type.
 
 It consolidates actual and simulated generation values in a structured format, allowing the company to compare realized generation against different benchmark scenarios such as PVSyst, SolarGIS and financial model assumptions.
 

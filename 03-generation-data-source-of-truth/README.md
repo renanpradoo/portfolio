@@ -1,6 +1,6 @@
 # Generation Data Source of Truth
 
-![Header](assets/header.png)
+
 
 ## Overview
 
@@ -8,7 +8,7 @@ This project was developed after I was promoted to work more closely with the co
 
 The original spreadsheet combined monthly generation data from solar assets, simulation outputs from PVSyst and the financial model, and meteorological assumptions from SolarGIS. Although this file was treated as the final reference for generation values, it had several structural issues: poor optimization, limited scalability, weak version control, and no reliable way to identify which simulation should be considered the most recent or trustworthy for each asset.
 
-After an incorrect data point was reported to the COO, the need for a more robust structure became clear. This project was my first deep exposure to SQL and relational data modeling. I studied SQL intensively, redesigned the logic behind the spreadsheet, and created a structured data model to improve reliability, traceability, and analytical visibility.
+After an incorrect data point was reported to the COO, the need for a more robust structure became clear. This project marked a turning point in my use of SQL and relational data modeling: I moved from spreadsheet-based analysis to a structured model designed for reliability, traceability, and executive reporting.
 
 The final output was a set of three core tables that became the company’s source of truth for generation data and were later used to feed Tableau reports for executive and operational analysis.
 
@@ -82,58 +82,63 @@ Together, these tables created a simple but scalable model for generation analys
 
 ### `compiled_generation`
 
-Fact table used to store monthly generation values.
+Fact table used to store monthly generation values across actual and simulated generation scenarios.
 
-**Granularity:** one row per project per month.
+**Granularity**: one row per project, reference month, generation type, and generation version when applicable.
 
-This table centralized the actual generation data used for performance analysis and comparison against simulation benchmarks.
+This table was designed in a long-format structure, allowing actual generation and expected generation scenarios to be analyzed through the same analytical layer.
 
-Main purpose:
+The table may include monthly values for:
 
-* Store monthly generation values
-* Support actual vs expected generation analysis
-* Enable historical tracking of asset performance
-* Feed Tableau dashboards with consolidated generation data
+* actual generation measured from operating assets;
+* PVSyst monthly generation curves;
+* SolarGIS-based expected generation;
+* internally modeled or adjusted generation scenarios.
 
-Example fields may include:
+For simulated or benchmark scenarios, each monthly record can reference `generation_version_control`, which identifies the simulation version, source assumptions, and benchmark status behind that monthly value.
 
-* Project ID
-* Reference month
-* Generation Type (PVSyst, SGIS, Actual, Modeled)
-* Generation Value (in kWh)
-* Generation Version Control ID
+For actual generation records, `generation_version_control_id` is not required, since actual generation is not a simulation version.
 
 ---
 
 ### `generation_version_control`
 
-Dimension table used to control simulation parameters and generation benchmark versions.
+Dimension table used to control simulation versions, benchmark assumptions, and the reliability status of expected generation scenarios.
 
-This was one of the most important parts of the project, because it allowed the company to track which simulation assumptions were being used for each asset and why.
+This table does not store monthly generation curves. Instead, it stores metadata and control information about each benchmark version used for generation analysis.
 
-The table was updated on demand whenever new simulations became available.
+It was designed to answer questions such as:
+
+* Which simulation version should be used as the trusted benchmark for each project?
+* Was the benchmark produced by the EPC, internal engineering team, construction team, or another source?
+* Which meteorological database supported the simulation?
+* Which financial model version was the simulation connected to?
+* Is this version active, outdated, legacy, or replaced?
+* Should this version be used for executive reporting?
 
 Main purpose:
 
 * Track PVSyst simulation versions
-* Track financial model assumptions
-* Control P50, P90, and P95 values
-* Identify who was responsible for the simulation
-* Distinguish between EPC, internal construction team, and engineering team inputs
-* Store SolarGIS meteorological basis
+* Track financial model generation assumptions
+* Store SolarGIS or other meteorological basis
+* Control P50, P90, and P95 values derived from simulation outputs
+* Identify the responsible source or team behind each benchmark
 * Improve traceability of benchmark selection
-* Support the selection of the most reliable simulation for each project
+* Support the selection of the most reliable expected-generation reference for each project
 
 Example fields may include:
 
 * Project ID
-* Generation Type (PVSyst, SGIS, Actual, Modeled)
-* Model Type (As-built,  Legacy, etc)
-* Model Version (Used for referencing the Financial Model)
-* Meteorological Database (MeteoNORM, NASA, SolarGIS, etc)
-* Datasource (Referencing PVSyst files)
-* P50 Generation (in kWh)
-* P90 Generation (in kWh)
+* Benchmark type: PVSyst, SolarGIS, Financial Model, Internal Model
+* Model type: As-built, Legacy, EPC, Internal Engineering, etc.
+* Model version
+* Meteorological database
+* Datasource or reference file
+* P50 generation
+* P90 generation
+* P95 generation
+* Is active version
+* Is trusted benchmark
 
 ---
 
@@ -268,3 +273,26 @@ This project demonstrates my ability to:
 The data used in this repository is anonymized and simplified for portfolio purposes.
 
 The original project was developed in a business environment where generation data had direct relevance for executive reporting, asset performance analysis, and operational decision-making.
+
+### Disclaimer 2: Modeling Note - Monthly Curves vs Simulation Summary Values
+
+The model separates monthly generation curves from simulation-level summary values.
+
+The `compiled_generation` table stores monthly generation records. For PVSyst scenarios, this means it can contain the expected generation curve across the full useful life of the project, such as a 20-year monthly projection.
+
+The `generation_version_control` table stores benchmark-level metadata and summary outputs. Values such as P50, P90, and P95 are not monthly records in this model. They represent simulation-level generation references derived from the probability distribution of the simulation output.
+
+This separation was intentional:
+
+* monthly records are used for time-series analysis, Tableau reporting, and actual vs expected comparisons;
+* simulation summary values are used for benchmark governance, traceability, and confidence-level reference;
+* multiple monthly curves can be connected to controlled benchmark versions;
+* the company can compare realized monthly generation against the correct expected curve while still preserving the broader simulation assumptions behind that curve.
+
+In practical terms, `compiled_generation` answers the operational question:
+
+> How much generation was expected or realized in each month?
+
+While `generation_version_control` answers the governance question:
+
+> Which benchmark version does this expected generation come from, and should it be trusted?
