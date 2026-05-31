@@ -100,7 +100,7 @@ CREATE TABLE generation_version_control (
         CHECK (model_type IN (
             'As-built',
             'Legacy',
-            'Financial',
+            'Preliminary'
         )),
 
     CONSTRAINT chk_gvc_simulation_responsible
@@ -157,13 +157,12 @@ CREATE UNIQUE INDEX uq_gvc_one_active_trusted_benchmark
 -- ============================================================
 
 CREATE TABLE compiled_generation (
-    compiled_generation_id          VARCHAR(40) PRIMARY KEY,
+    id                              VARCHAR(40) PRIMARY KEY,
     project_id                      VARCHAR(20) NOT NULL,
     generation_version_control_id   VARCHAR(30),
     reference_month                 DATE NOT NULL,
     generation_type                 VARCHAR(50) NOT NULL,
     generation_value_kwh            NUMERIC(14, 2) NOT NULL,
-    data_source                     VARCHAR(120) NOT NULL,
     created_at                      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at                      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

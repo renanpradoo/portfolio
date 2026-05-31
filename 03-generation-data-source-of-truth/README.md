@@ -287,6 +287,12 @@ This project demonstrates my ability to:
 ```text
 .
 ├── README.md
+├── assets/
+│   ├── dashboard.png
+│   ├── generation_source_of_truth_erd.png
+│   ├── header.png
+│   ├── key_results.png
+│   └── summary.png
 ├── data_dictionary/
 │   ├── compiled_generation.md
 │   ├── generation_version_control.md
@@ -295,8 +301,8 @@ This project demonstrates my ability to:
 │   ├── compiled_generation_sample.csv
 │   ├── generation_version_control_sample.csv
 │   └── projects_sample.csv
-└── assets/
-    └── tableau_report_preview.png
+└── sql/
+    └── 01_create_tables.sql
 ```
 
 ---
