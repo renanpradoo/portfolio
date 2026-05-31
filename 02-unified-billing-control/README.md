@@ -24,7 +24,7 @@ The largest client in the portfolio, with monthly billing above R$ 300k, started
 
 In parallel, another large client started questioning the contractual calculations used for billing adjustments. In practical terms, I had to quickly understand and operationalize different contract models across more than 40 projects while keeping the monthly billing process running.
 
-## Initial Problem
+## Challenges
 
 The billing process had several structural issues:
 
@@ -41,7 +41,7 @@ The portfolio was based on distributed generation contracts where billing was li
 
 The utility companies were an external source of complexity, but before trying to solve that layer directly, I focused on what could be improved internally: the structure, visibility, and consistency of the billing control process.
 
-## Objective
+## Plan of Action
 
 The objective was to create a unified operational control architecture capable of supporting the full billing cycle across the portfolio.
 
@@ -153,6 +153,6 @@ The implemented controls delivered measurable improvements to the billing operat
 
 ## Disclaimer
 
-This repository does not include proprietary data, company names, client information, contract details, internal documents, or source files.
+The project was developed in a corporate context, and the original files are confidential or no longer available. 
 
-The objective is to present the business context, problem-solving approach, and operational impact of the project while preserving confidentiality.
+The objective is to present the business context, problem-solving approach, and operational impact of the project.

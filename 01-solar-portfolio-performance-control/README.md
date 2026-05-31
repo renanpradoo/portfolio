@@ -99,7 +99,7 @@ In total, the consolidated base covered around **50 solar assets**.
 
 ---
 
-### Key Skills
+### Key-Skills
 
 * Process automation
 * Data collection from multiple sources
@@ -123,6 +123,6 @@ The solution prioritized:
 * Low infrastructure complexity;
 * Easy access to consolidated data by business users.
 
-Because the project was developed in a corporate context, this repository does not include real credentials, real asset names, sensitive operational data, or proprietary business information.
+The project was developed in a corporate context, and the original files are confidential or no longer available. 
 
 The structure shown here is a simplified representation of the logic, business problem, and impact of the original project.
