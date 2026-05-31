@@ -129,7 +129,7 @@ Main purpose:
 Example fields may include:
 
 * Project ID
-* Benchmark type: PVSyst, SolarGIS, Financial Modeled
+* Benchmark type: PVSyst, SolarGIS, Modeled
 * Model type: As-built, Legacy, EPC, Internal Engineering, etc.
 * Model version
 * Meteorological database
@@ -302,8 +302,16 @@ This project demonstrates my ability to:
 │   ├── generation_version_control_sample.csv
 │   └── projects_sample.csv
 └── sql/
-    └── 01_create_tables.sql
+    ├── README.md
+    ├── 01_create_tables.sql
+    └── 02_optional_validation_queries.sql
 ```
+
+---
+
+## Reconstruction Note
+
+This project is a reconstructed version of a real professional project. The original files are confidential or no longer available, so the data model, SQL scripts and sample data were recreated for portfolio purposes using synthetic data. AI assistance was used to support the reconstruction of the SQL scripts and documentation, while the business context, modeling decisions and analytical logic reflect my own understanding of the original work.
 
 ---
 

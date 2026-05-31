@@ -98,7 +98,7 @@ SELECT
     p.commercial_operation_date,
     MIN(cg.reference_month) AS first_actual_month,
     MAX(cg.reference_month) AS last_actual_month,
-    COUNT(cg.compiled_generation_id) AS actual_months_available
+    COUNT(cg.id) AS actual_months_available
 FROM projects p
 LEFT JOIN compiled_generation cg
     ON p.project_id = cg.project_id
@@ -312,7 +312,7 @@ ORDER BY
 --   Simulated/benchmark records should reference GVC.
 
 SELECT
-    compiled_generation_id,
+    id,
     project_id,
     reference_month,
     generation_type,
@@ -363,7 +363,7 @@ ORDER BY
 --   This should return zero rows if FK constraints are active.
 
 SELECT
-    cg.compiled_generation_id,
+    cg.id,
     cg.project_id,
     cg.reference_month,
     cg.generation_type
@@ -450,7 +450,7 @@ SELECT
     p.project_name,
     gvc.model_type,
     gvc.model_version,
-    COUNT(cg.compiled_generation_id) AS pvsyst_month_count,
+    COUNT(cg.id) AS pvsyst_month_count,
     MIN(cg.reference_month) AS first_pvsyst_month,
     MAX(cg.reference_month) AS last_pvsyst_month,
     SUM(cg.generation_value_kwh) AS useful_life_generation_kwh
@@ -485,7 +485,7 @@ SELECT
     gvc.generation_version_control_id,
     gvc.model_type,
     gvc.model_version,
-    COUNT(cg.compiled_generation_id) AS month_count
+    COUNT(cg.id) AS month_count
 FROM generation_version_control gvc
 LEFT JOIN compiled_generation cg
     ON cg.generation_version_control_id = gvc.generation_version_control_id
@@ -496,7 +496,7 @@ GROUP BY
     gvc.generation_version_control_id,
     gvc.model_type,
     gvc.model_version
-HAVING COUNT(cg.compiled_generation_id) <> 240
+HAVING COUNT(cg.id) <> 240
 ORDER BY
     gvc.project_id,
     gvc.generation_version_control_id;
@@ -513,7 +513,7 @@ SELECT
     p.project_id,
     p.project_name,
     p.installed_capacity_kwp,
-    COUNT(cg.compiled_generation_id) AS actual_months,
+    COUNT(cg.id) AS actual_months,
     SUM(cg.generation_value_kwh) AS actual_generation_kwh,
     ROUND(
         SUM(cg.generation_value_kwh) / NULLIF(p.installed_capacity_kwp, 0),
