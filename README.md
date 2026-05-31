@@ -57,7 +57,8 @@ That is the kind of problem I enjoy solving.
 Turning messy business processes into reliable data structures, controls, and decision-support systems.
 
 
-Keywords: 
+### Keywords
+
     data-analytics
     business-operations
     sql
