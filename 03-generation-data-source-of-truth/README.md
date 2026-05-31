@@ -1,8 +1,8 @@
 # Generation Data Source of Truth
 
-## Overview
-
 ![Header](assets/header.png)
+
+## Overview
 
 This project was developed after I was promoted to work more closely with the company’s C-Level, especially the COO. At that point, generation data had become one of the most important operational and strategic datasets in the company, but it was still being managed through a highly manual Google Sheets file.
 
