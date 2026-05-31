@@ -1,0 +1,41 @@
+project_id,project_name,installed_capacity_kwp,project_type,asset_category,commercial_operation_date,state,city,distributor,operational_status,created_at,updated_at
+PRJ_001,Solar Plant Aurora,50.00,Ground-mounted,Shared Generation,2022-04-01,MG,Uberlândia,Distributor MG-01,Operational,2024-01-13 10:00:00,2024-02-17 12:00:00
+PRJ_002,Solar Plant Serra,75.00,Roof-mounted,Other,,MG,Montes Claros,Distributor MG-01,Under Construction,2024-01-16 11:00:00,2024-02-25 13:00:00
+PRJ_003,Solar Plant Horizonte,100.00,Carport,Remote Generation,2026-10-01,MG,Juiz de Fora,Distributor MG-02,Commissioning,2024-01-19 12:00:00,2024-03-04 14:00:00
+PRJ_004,Solar Plant Norte,120.00,Other,On-site Generation,2021-09-01,MG,Patos de Minas,Distributor MG-01,Inactive,2024-01-22 13:00:00,2024-03-12 15:00:00
+PRJ_005,Solar Plant Vale,180.00,Ground-mounted,Shared Generation,2020-02-01,SP,Ribeirão Preto,Distributor SP-01,Decommissioned,2024-01-25 14:00:00,2024-03-20 16:00:00
+PRJ_006,Solar Plant Lagoa,250.00,Roof-mounted,Other,2023-07-01,SP,Campinas,Distributor SP-02,Operational,2024-01-28 09:00:00,2024-03-28 11:00:00
+PRJ_007,Solar Plant Ipê,320.00,Carport,Remote Generation,,SP,Sorocaba,Distributor SP-02,Under Construction,2024-01-31 10:00:00,2024-03-01 12:00:00
+PRJ_008,Solar Plant Verde,400.00,Other,On-site Generation,2026-06-01,SP,Bauru,Distributor SP-03,Commissioning,2024-02-03 11:00:00,2024-03-09 13:00:00
+PRJ_009,Solar Plant Sol,500.00,Ground-mounted,Shared Generation,2020-07-01,RJ,Campos dos Goytacazes,Distributor RJ-01,Inactive,2024-02-06 12:00:00,2024-03-17 14:00:00
+PRJ_010,Solar Plant Pedra,650.00,Roof-mounted,Other,2019-03-01,RJ,Volta Redonda,Distributor RJ-02,Decommissioned,2024-02-09 13:00:00,2024-03-25 15:00:00
+PRJ_011,Solar Plant Campo,750.00,Carport,Remote Generation,2024-10-01,BA,Feira de Santana,Distributor BA-01,Operational,2024-02-12 14:00:00,2024-04-02 16:00:00
+PRJ_012,Solar Plant Riacho,900.00,Other,On-site Generation,,BA,Vitória da Conquista,Distributor BA-01,Under Construction,2024-02-15 09:00:00,2024-04-10 11:00:00
+PRJ_013,Solar Plant Cedro,1000.00,Ground-mounted,Shared Generation,2026-06-01,GO,Anápolis,Distributor GO-01,Commissioning,2024-02-18 10:00:00,2024-04-18 12:00:00
+PRJ_014,Solar Plant Atlas,1150.00,Roof-mounted,Other,2022-05-01,GO,Rio Verde,Distributor GO-01,Inactive,2024-02-21 11:00:00,2024-03-22 13:00:00
+PRJ_015,Solar Plant Delta,1250.00,Carport,Remote Generation,2020-04-01,PE,Petrolina,Distributor PE-01,Decommissioned,2024-02-24 12:00:00,2024-03-30 14:00:00
+PRJ_016,Solar Plant Beta,1400.00,Other,On-site Generation,2021-01-01,CE,Juazeiro do Norte,Distributor CE-01,Operational,2024-02-27 13:00:00,2024-04-07 15:00:00
+PRJ_017,Solar Plant Gaia,1500.00,Ground-mounted,Shared Generation,,PR,Londrina,Distributor PR-01,Under Construction,2024-03-01 14:00:00,2024-04-15 16:00:00
+PRJ_018,Solar Plant Nova,1650.00,Roof-mounted,Other,2026-07-01,SC,Chapecó,Distributor SC-01,Commissioning,2024-03-04 09:00:00,2024-04-23 11:00:00
+PRJ_019,Solar Plant Brisa,1800.00,Carport,Remote Generation,2021-03-01,RS,Santa Maria,Distributor RS-01,Inactive,2024-03-07 10:00:00,2024-05-01 12:00:00
+PRJ_020,Solar Plant Vento,2000.00,Other,On-site Generation,2019-05-01,MT,Rondonópolis,Distributor MT-01,Decommissioned,2024-03-10 11:00:00,2024-05-09 13:00:00
+PRJ_021,Solar Plant Raiz,2250.00,Ground-mounted,Shared Generation,2022-04-01,MG,Uberlândia,Distributor MG-01,Operational,2024-03-13 12:00:00,2024-04-12 14:00:00
+PRJ_022,Solar Plant Arco,2500.00,Roof-mounted,Other,,MG,Montes Claros,Distributor MG-01,Under Construction,2024-03-16 13:00:00,2024-04-20 15:00:00
+PRJ_023,Solar Plant Luz,2750.00,Carport,Remote Generation,2026-10-01,MG,Juiz de Fora,Distributor MG-02,Commissioning,2024-03-19 14:00:00,2024-04-28 16:00:00
+PRJ_024,Solar Plant Pampa,3000.00,Other,On-site Generation,2020-01-01,MG,Patos de Minas,Distributor MG-01,Inactive,2024-03-22 09:00:00,2024-05-06 11:00:00
+PRJ_025,Solar Plant Cerrado,3200.00,Ground-mounted,Shared Generation,2020-06-01,SP,Ribeirão Preto,Distributor SP-01,Decommissioned,2024-03-25 10:00:00,2024-05-14 12:00:00
+PRJ_026,Solar Plant Duna,3500.00,Roof-mounted,Other,2023-07-01,SP,Campinas,Distributor SP-02,Operational,2024-03-28 11:00:00,2024-05-22 13:00:00
+PRJ_027,Solar Plant Oeste,3750.00,Carport,Remote Generation,,SP,Sorocaba,Distributor SP-02,Under Construction,2024-03-31 12:00:00,2024-05-30 14:00:00
+PRJ_028,Solar Plant Leste,4000.00,Other,On-site Generation,2026-06-01,SP,Bauru,Distributor SP-03,Commissioning,2024-04-03 13:00:00,2024-05-03 15:00:00
+PRJ_029,Solar Plant Sul,4200.00,Ground-mounted,Shared Generation,2022-11-01,RJ,Campos dos Goytacazes,Distributor RJ-01,Inactive,2024-04-06 14:00:00,2024-05-11 16:00:00
+PRJ_030,Solar Plant Mata,4500.00,Roof-mounted,Other,2019-07-01,RJ,Volta Redonda,Distributor RJ-02,Decommissioned,2024-04-09 09:00:00,2024-05-19 11:00:00
+PRJ_031,Solar Plant Prisma,4750.00,Carport,Remote Generation,2024-10-01,BA,Feira de Santana,Distributor BA-01,Operational,2024-04-12 10:00:00,2024-05-27 12:00:00
+PRJ_032,Solar Plant Vértice,5000.00,Other,On-site Generation,,BA,Vitória da Conquista,Distributor BA-01,Under Construction,2024-04-15 11:00:00,2024-06-04 13:00:00
+PRJ_033,Solar Plant Fênix,600.00,Ground-mounted,Shared Generation,2026-06-01,GO,Anápolis,Distributor GO-01,Commissioning,2024-04-18 12:00:00,2024-06-12 14:00:00
+PRJ_034,Solar Plant Jade,850.00,Roof-mounted,Other,2021-09-01,GO,Rio Verde,Distributor GO-01,Inactive,2024-04-21 13:00:00,2024-06-20 15:00:00
+PRJ_035,Solar Plant Ônix,1350.00,Carport,Remote Generation,2020-08-01,PE,Petrolina,Distributor PE-01,Decommissioned,2024-04-24 14:00:00,2024-05-24 16:00:00
+PRJ_036,Solar Plant Safira,1750.00,Other,On-site Generation,2021-01-01,CE,Juazeiro do Norte,Distributor CE-01,Operational,2024-04-27 09:00:00,2024-06-01 11:00:00
+PRJ_037,Solar Plant Granito,2350.00,Ground-mounted,Shared Generation,,PR,Londrina,Distributor PR-01,Under Construction,2024-04-30 10:00:00,2024-06-09 12:00:00
+PRJ_038,Solar Plant Canário,2850.00,Roof-mounted,Other,2026-07-01,SC,Chapecó,Distributor SC-01,Commissioning,2024-05-03 11:00:00,2024-06-17 13:00:00
+PRJ_039,Solar Plant Acácia,3300.00,Carport,Remote Generation,2020-07-01,RS,Santa Maria,Distributor RS-01,Inactive,2024-05-06 12:00:00,2024-06-25 14:00:00
+PRJ_040,Solar Plant Estrela,3900.00,Other,On-site Generation,2019-09-01,MT,Rondonópolis,Distributor MT-01,Decommissioned,2024-05-09 13:00:00,2024-07-03 15:00:00
