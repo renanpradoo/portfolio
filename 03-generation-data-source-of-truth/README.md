@@ -97,7 +97,7 @@ The table may include monthly values for:
 
 For simulated or benchmark scenarios, each monthly record can reference `generation_version_control`, which identifies the simulation version, source assumptions, and benchmark status behind that monthly value.
 
-For actual generation records, `generation_version_control_id` is not required, since actual generation is not a simulation version.
+For actual generation, `generation_version_control_id` should generally be null, since actual measured generation is not itself a simulation or benchmark version.
 
 ---
 
@@ -129,7 +129,7 @@ Main purpose:
 Example fields may include:
 
 * Project ID
-* Benchmark type: PVSyst, SolarGIS, Financial Model, Internal Model
+* Benchmark type: PVSyst, SolarGIS, Financial Modeled
 * Model type: As-built, Legacy, EPC, Internal Engineering, etc.
 * Model version
 * Meteorological database
@@ -166,6 +166,12 @@ Example fields may include:
 
 ---
 
+## Entity Relationship Diagram
+
+![Generation Source of Truth ERD](assets/generation_source_of_truth_erd.png)
+
+---
+
 ## Reporting Layer
 
 The structured tables were used to feed Tableau reports focused on asset performance and generation reliability.
@@ -184,6 +190,31 @@ Main analyses included:
 * Availability and performance remediation opportunities
 
 Although the reports were mainly directed to the COO and had limited company-wide distribution, they played an important role in executive analysis and operational decision-making.
+
+---
+
+## Modeling Note - Monthly Curves vs Simulation Summary Values
+
+The model separates monthly generation curves from simulation-level summary values.
+
+The `compiled_generation` table stores monthly generation records. For PVSyst scenarios, this means it can contain the expected generation curve across the full useful life of the project, such as a 20-year monthly projection.
+
+The `generation_version_control` table stores benchmark-level metadata and summary outputs. Values such as P50, P90, and P95 are not monthly records in this model. They represent simulation-level generation references derived from the probability distribution of the simulation output.
+
+This separation was intentional:
+
+* monthly records are used for time-series analysis, Tableau reporting, and actual vs expected comparisons;
+* simulation summary values are used for benchmark governance, traceability, and confidence-level reference;
+* multiple monthly curves can be connected to controlled benchmark versions;
+* the company can compare realized monthly generation against the correct expected curve while still preserving the broader simulation assumptions behind that curve.
+
+In practical terms, `compiled_generation` answers the operational question:
+
+> How much generation was expected or realized in each month?
+
+While `generation_version_control` answers the governance question:
+
+> Which benchmark version does this expected generation come from, and should it be trusted?
 
 ---
 
@@ -273,26 +304,3 @@ This project demonstrates my ability to:
 The data used in this repository is anonymized and simplified for portfolio purposes.
 
 The original project was developed in a business environment where generation data had direct relevance for executive reporting, asset performance analysis, and operational decision-making.
-
-### Disclaimer 2: Modeling Note - Monthly Curves vs Simulation Summary Values
-
-The model separates monthly generation curves from simulation-level summary values.
-
-The `compiled_generation` table stores monthly generation records. For PVSyst scenarios, this means it can contain the expected generation curve across the full useful life of the project, such as a 20-year monthly projection.
-
-The `generation_version_control` table stores benchmark-level metadata and summary outputs. Values such as P50, P90, and P95 are not monthly records in this model. They represent simulation-level generation references derived from the probability distribution of the simulation output.
-
-This separation was intentional:
-
-* monthly records are used for time-series analysis, Tableau reporting, and actual vs expected comparisons;
-* simulation summary values are used for benchmark governance, traceability, and confidence-level reference;
-* multiple monthly curves can be connected to controlled benchmark versions;
-* the company can compare realized monthly generation against the correct expected curve while still preserving the broader simulation assumptions behind that curve.
-
-In practical terms, `compiled_generation` answers the operational question:
-
-> How much generation was expected or realized in each month?
-
-While `generation_version_control` answers the governance question:
-
-> Which benchmark version does this expected generation come from, and should it be trusted?
